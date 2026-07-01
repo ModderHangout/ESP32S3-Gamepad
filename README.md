@@ -38,7 +38,7 @@ Originally designed for DIY simulator hardware such as button boxes for games li
 
 Most ESP32-S3 development boards have **two USB ports**:
 
-- **This repo has only been tested with this model
+- **This repo has only been tested with the two port model.
 - **Native USB / USB-OTG** → Used for the USB HID gamepad.
 - **USB-to-UART** → Typically used for flashing firmware and serial debugging.
 
