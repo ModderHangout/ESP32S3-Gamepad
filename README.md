@@ -16,7 +16,8 @@ NOTE THIS CAN BE USED WITHOUGHT INTENT TO CREATE A BUTTON BOX IT WOULD JUST NEED
 - **ESP32-S3 Development Board** (Ensure you plug into the Native USB/OTG port, not the UART port!)
 - Momentary push buttons or toggle switches
 - Jumper wires
-- 3D Printed enclosure (Designed and sliced using a Creality Ender 3 V3 SE)
+  
+- 3D Printed enclosure (Designed and sliced using a Creality Ender 3 V3 SE) -- ONLY FOR BUTTON BOX
 
 ## 📌 Wiring Blueprint
 Connect your momentary switches directly between the configured GPIO pin and the 3.3V power rail:
