@@ -13,7 +13,7 @@ NOTE THIS CAN BE USED WITHOUGHT INTENT TO CREATE A BUTTON BOX IT WOULD JUST NEED
 - **Custom Device Descriptor**: Pre-configured with a unique Product ID (PID) to bypass Windows registry caching and instantly register as `ETS/ATS Button Box` in the Game Controllers menu.
 
 ## 🛠️ Hardware Requirements
-- **ESP32-S3 Development Board** (Ensure you plug into the Native USB/OTG port when trying to use, only use the UART port when flashing!)
+- **ESP32-S3 Development Board** (Ensure you plug into the Native USB/OTG port when trying to use, only use the UART port when flashing code!)
 - Momentary push buttons or toggle switches
 - Jumper wires
   
