@@ -36,14 +36,16 @@ Originally designed for DIY simulator hardware such as button boxes for games li
 
 ## 🔌 USB Connection
 
-Most ESP32-S3 development boards have **two USB ports**:
+> **⚠️ Important:** This project has **only been tested on ESP32-S3 development boards with two USB ports**. While it may work on single-port boards, compatibility has not been verified.
 
-- **This repo has only been tested with the two port model.
+Most dual-port ESP32-S3 development boards have:
+
 - **Native USB / USB-OTG** → Used for the USB HID gamepad.
 - **USB-to-UART** → Typically used for flashing firmware and serial debugging.
 
-> **Important:** When using the controller as a gamepad, plug the USB cable into the **Native USB/OTG** port. Some development boards require the UART port only for flashing firmware.
-
+> **When using the controller as a gamepad, connect the USB cable to the Native USB/OTG port.**
+>
+> Use the **USB-to-UART** port when flashing firmware or using the serial monitor (if required by your development board).
 ---
 
 ## 📌 Wiring Blueprint
