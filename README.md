@@ -14,7 +14,7 @@ Originally created for DIY button boxes used in **Euro Truck Simulator 2 (ETS2)*
 
 * 🎮 Native USB HID Gamepad emulation
 * 🖥️ Plug-and-play support on Windows
-* 🔘 Supports up to **32 programmable buttons**
+* 🔘 Supports up to **18 programmable buttons**
 * ⚡ Low-latency USB communication using TinyUSB
 * 🛠️ Built with **ESP-IDF v5.5.4**
 * 🔓 Fully open source and easy to customize
