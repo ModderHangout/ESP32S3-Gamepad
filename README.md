@@ -4,7 +4,7 @@ This repository contains an open-source, high-performance ESP-IDF firmware solut
 
 It is specifically designed for DIY simulator hardware builders looking to create custom button boxes for games like *Euro Truck Simulator 2 (ETS2)*, *American Truck Simulator (ATS)*, and racing simulators.
 
-NOTE THIS CAN BE USED WITHOUGHT INTENT TO CREATE A BUTTON BOX IT WOULD JUST NEED TO BE MODIFIED WHICH YOU WILL NOT FIND HERE
+NOTE THIS CAN BE USED WITHOUGHT INTENT TO CREATE A BUTTON BOX IT WOULD JUST NEED TO BE MODIFIED
 
 ## 🚀 Features
 - **Native USB Execution**: Runs directly on the ESP32-S3 internal USB controller via the TinyUSB stack. No external UART bridge chips are required.
