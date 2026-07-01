@@ -38,9 +38,7 @@ Originally designed for DIY simulator hardware such as button boxes for games li
 
 > **⚠️ Important:** This project has **only been tested on ESP32-S3 development boards with two USB ports**. While it may work on single-port boards, compatibility has not been verified.
 
-> ** ⚠️ Critical Hardware Step
-
-**Before plugging the controller into your PC, make sure to **physically short or solder bridge the two USB-OTG pads** on the back of your ESP32-S3 development board. If these pads are left open, the native USB port will remain isolated and won't send button presses to your computer.
+> ** ⚠️ Critical Hardware Step **Before plugging the controller into your PC, make sure to **physically short or solder bridge the two USB-OTG pads** on the back of your ESP32-S3 development board. If these pads are left open, the native USB port will remain isolated and won't send button presses to your computer.
 
 
 Most dual-port ESP32-S3 development boards have:
