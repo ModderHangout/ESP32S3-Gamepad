@@ -1,0 +1,31 @@
+# How To Make An ESP32S3 Gamepad!
+
+Follow these steps in order inside your ESP-IDF command prompt to clone, configure, and flash this 15-button USB joystick project.
+
+### Quick Start Installation
+
+1. Navigate to your main development directory:
+   ```bash
+   cd D:\esp
+   ```
+
+2. Clone this controller repository to your machine:
+   ```bash
+   git clone https://github.com
+   ```
+
+3. Enter the project workspace folder:
+   ```bash
+   cd YOUR_REPOSITORY
+   ```
+
+4. Clear out the compiler cache and lock the target to the ESP32-S3 chip:
+   ```bash
+   idf.py fullclean
+   idf.py set-target esp32s3
+   ```
+
+5. Compile the source code and flash it directly to your board's UART port:
+   ```bash
+   idf.py build flash
+   ```
