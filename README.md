@@ -46,19 +46,21 @@ Most dual-port ESP32-S3 development boards have:
 > **When using the controller as a gamepad, connect the USB cable to the Native USB/OTG port.**
 >
 > Use the **USB-to-UART** port when flashing firmware or using the serial monitor (if required by your development board).
----
 
 ### ⚠️ Critical Hardware Step
+
 Before plugging the controller into your PC, make sure to **physically short or solder bridge the two USB-OTG pads** on the back of your ESP32-S3 development board. If these pads are left open, the native USB port will remain isolated and won't send button presses to your computer.
 
 ---
 
 ### 📃 Commands To Copy
+
 COMMADS IN ORDER
 
 ---
 
 ### 📥 How to Install
+
   VIDEO LINK
 
 ---
