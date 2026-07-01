@@ -1,87 +1,142 @@
-# ESP32-S3 Native USB HID Gamepad Emulator 🎮
+# 🎮 ESP32-S3 Native USB HID Gamepad Emulator
 
-This repository contains an open-source, high-performance ESP-IDF firmware project that turns an **ESP32-S3** into a native USB HID gamepad.
+Turn your **ESP32-S3** into a fully functional **USB HID gamepad** that Windows automatically recognizes as a standard game controller. Development requires ESP-IDF v5.5.4, but no additional Windows drivers are needed.
 
-Originally designed for DIY simulator hardware such as button boxes for games like **Euro Truck Simulator 2 (ETS2)**, **American Truck Simulator (ATS)**, and racing simulators, this firmware can easily be modified for almost any custom USB HID controller.
+Built with **ESP-IDF** and **TinyUSB**, this project provides a lightweight, low-latency USB HID implementation that's perfect for custom controllers, simulator hardware, robotics, and other embedded projects.
 
-> **Note:** This project is **not limited to button boxes**. With minor modifications, it can be adapted for custom gamepads, arcade controllers, flight simulator panels, stream decks, macro pads, and many other USB HID devices.
+Originally created for DIY button boxes used in **Euro Truck Simulator 2 (ETS2)**, **American Truck Simulator (ATS)**, and racing simulators, the firmware can easily be customized for almost any USB HID controller.
 
----
-
-## 🚀 Features
-
-- 🎮 **Native USB HID Support** – Uses the ESP32-S3's built-in USB controller with the TinyUSB stack.
-- ⚡ **Low-Latency Performance** – Fast response times with native USB communication.
-- 🔌 **No Additional USB HID Hardware Required** – The ESP32-S3 handles USB HID natively.
-- 🔘 **Active-High Button Inputs** – Uses the ESP32-S3's internal pull-down resistors (`.pull_down_en = 1`) for reliable digital inputs.
-- 🎛️ **Expandable Design** – Easily supports up to **32 digital buttons**.
-- 🆔 **Custom USB Device Descriptor** – Uses a unique Product ID (PID) so Windows recognizes the controller as a separate device.
-- 🛠️ **Open Source** – Fully customizable for your own projects.
+> **This project isn't limited to button boxes.** It can be adapted for custom gamepads, arcade controllers, flight simulator panels, stream decks, macro pads, control panels, and much more.
 
 ---
 
-## 🛠️ Hardware Requirements
+# ✨ Features
 
-- ESP32-S3 Development Board
-- USB-C cable
-- Momentary push buttons or toggle switches
-- Jumper wires
-- Breadboard or custom PCB
-
-### Optional
-
-- 3D-printed enclosure (Designed and printed on a Creality Ender 3 V3 SE for the button box version)
+* 🎮 Native USB HID Gamepad emulation
+* 🖥️ Plug-and-play support on Windows
+* 🔘 Supports up to **32 programmable buttons**
+* ⚡ Low-latency USB communication using TinyUSB
+* 🛠️ Built with **ESP-IDF v5.5.4**
+* 🔓 Fully open source and easy to customize
+* 📦 Lightweight firmware with minimal overhead
 
 ---
 
-## 🔌 USB Connection
+# 🖥️ Compatibility
 
-> **⚠️ Important:** This project has **only been tested on ESP32-S3 development boards with two USB ports**. While it may work on single-port boards, compatibility has not been verified.
+## Operating Systems
 
-> **⚠️ Critical Hardware Step:** Before plugging the controller into your PC, make sure to **physically short or solder bridge the two USB-OTG pads** on the back of your ESP32-S3 development board. If these pads are left open, the native USB port will remain isolated and won't send button presses to your computer.
+* ✅ Windows 10
+* ✅ Windows 11
 
+## Supported Boards
 
-Most dual-port ESP32-S3 development boards have:
+* ESP32-S3 development boards with **Native USB (USB-OTG) and UART** support
+* Dual USB port development boards are the only type tested and known to be working
 
-- **Native USB / USB-OTG** → Used for the USB HID gamepad.
-- **USB-to-UART** → Typically used for flashing firmware and serial debugging.
-
-> **When using the controller as a gamepad, connect the USB cable to the Native USB/OTG port.**
->
-> Use the **USB-to-UART** port when flashing firmware or using the serial monitor (if required by your development 
----
-
-## 📃 Commands To Copy
-
-- COMMADS IN ORDER
+> ⚠️ **XIAO ESP32-S3 boards have not yet been tested.** They may work, but compatibility has not been confirmed.
 
 ---
 
-## 📥 How to Install
+# ⚠️ Before You Install
 
-  - VIDEO LINK
+Before building or flashing the firmware, make sure the following requirements are met:
+
+* Install **ESP-IDF v5.5.4**. This version has been tested and is known to work.
+* Your board has both a **Native USB (USB-OTG)** port and a **USB-to-UART** port.
+* The **USB-OTG pads** on the back of the board are bridged. While this may not be required on every board, all successful testing has been performed with the pads connected.
+* Flash the firmware using the **USB-to-UART** port.
+* After flashing, reconnect the USB cable to the **Native USB (USB-OTG)** port.
+
+If these steps are not followed, Windows may not detect the controller correctly.
 
 ---
 
-## 📌 Wiring Blueprint
+# 🚀 Installation
 
-Connect each momentary switch between **3.3V** and the configured GPIO pin.
+New to ESP32 development?
+
+Follow the complete setup guide here:
+
+**🎥 YouTube:** *(Insert Video Link Here)*
+
+## 1. Install ESP-IDF
+
+Install **ESP-IDF v5.5.4** from the official Espressif documentation.
+
+> 📎 **ESP-IDF Installation Guide:** *([Insert Link Here](https://docs.espressif.com/projects/esp-idf/en/v5.5.4/esp32/get-started/index.html#installation))*
+
+---
+
+## 2. Open terminal
+
+In the windows search bar search **ESP IDF** and open
+
+---
+
+## 3. Cd into the project workspace
+
+```bash
+cd DRIVE\Folder\Folder\Project
+```
+---
+
+## 4. Clone the repository
+
+```bash
+git clone https://github.com/USERNAME/ESP32-S3-USB-Gamepad.git
+```
+
+---
+
+## 5. Build the Project
+
+```bash
+idf.py build
+```
+
+---
+
+## 6. Flash the Firmware
+
+Connect your board using the **UART** port and run:
+
+```bash
+idf.py flash
+```
+
+---
+
+## 5. Connect as a Gamepad
+
+After flashing:
+
+1. Disconnect the USB cable.
+2. Connect it to the **Native USB (USB-OTG)** port.
+3. Windows should automatically detect the device as a USB HID Gamepad.
+4. Verify operation by opening **Set up USB Game Controllers** (`joy.cpl`).
+
+---
+
+# 🔌 Wiring
+
+Connect each button between **3.3V** and the configured GPIO pin.
 
 ```text
       3.3V
         │
-    ┌───┴───┐
-    │Switch │
-    └───┬───┘
+    ┌───┴────┐
+    │ Button │
+    └───┬────┘
         │
 GPIO (Example: GPIO4)
 ```
 
-Because the firmware uses the ESP32-S3's **internal pull-down resistors**, each GPIO pin normally reads **LOW** and changes to **HIGH** when the switch is pressed.
+The firmware uses the ESP32-S3's **internal pull-down resistors**, meaning every GPIO remains **LOW** until the button is pressed, at which point it reads **HIGH**.
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 ESP32-S3-USB-Gamepad/
@@ -89,28 +144,46 @@ ESP32-S3-USB-Gamepad/
 ├── main/
 │   ├── main.c
 │   ├── tusb_hid.c
-│   └── gpio_config.c
+│   ├── gpio_config.c
+│   └── CMakeLists.txt
 │
-├── CMakeLists.txt
 ├── sdkconfig
+├── CMakeLists.txt
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
-## 📜 License
+# 💡 Great For
 
-This project is licensed under the **MIT License**.
-
-You are free to use, modify, distribute, and build upon this project for personal or commercial use. See the [LICENSE](LICENSE) file for more information.
+* DIY game controllers
+* Button boxes
+* Flight simulators
+* Racing simulators
+* Arcade cabinets
+* Robotics
+* USB HID development
+* Custom control panels
 
 ---
 
-## 👋 About
+# 📜 License
 
-Created by a **13-year-old maker** who enjoys electronics, 3D printing, programming, dirt bikes, and designing custom hardware.
+Licensed under the **MIT License**.
 
-If you found this project useful, consider ⭐ **starring the repository** and checking out the accompanying build videos on YouTube!
+You are free to use, modify, distribute, and build upon this project for personal or commercial use. See the **LICENSE** file for details.
+
+---
+
+# 👋 About
+
+Hi! I'm a **13-year-old maker** who enjoys electronics, programming, 3D printing, CAD, dirt bikes, and building custom hardware.
+
+This project started as a way to create affordable simulator hardware and has grown into a flexible USB HID framework for the ESP32-S3.
+
+If this project helped you, please consider ⭐ **starring the repository**. It really helps support future development!
+
+Bug reports, feature requests, and pull requests are always welcome.
 
 Happy building! 🎮
