@@ -45,7 +45,7 @@ Before building or flashing the firmware, make sure the following requirements a
 * Install **ESP-IDF v5.5.4**. This version has been tested and is known to work.
 * Your board has both a **Native USB (USB-OTG)** port and a **USB-to-UART** port.
 * The **USB-OTG pads** on the back of the board are bridged. While this may not be required on every board, all successful testing has been performed with the pads connected.
-* Flash the firmware using the **USB-to-UART** port.
+* Flash the firmware using the **UART** port.
 * After flashing, reconnect the USB cable to the **Native USB (USB-OTG)** port.
 
 If these steps are not followed, Windows may not detect the controller correctly.
@@ -68,9 +68,9 @@ Install **ESP-IDF v5.5.4** from the official Espressif documentation.
 
 ---
 
-## 2. Clone the repository
+## 2. Download the latest release
 
-Download the latest release and unzip it. Then move the **tusb_hid** file into your project
+Download the latest release and unzip it. Then move the **tusb_hid** file into your project workspace
 
 ---
 
@@ -87,7 +87,16 @@ cd DRIVE\Folder\Folder\Project\tusb_hid
 ```
 ---
 
-## 5. Build the Project
+## 5. Set the Project Target
+
+```bash
+idf.py set-target esp32s3
+```
+
+---
+
+
+## 6. Build the Project
 
 ```bash
 idf.py build
@@ -95,7 +104,7 @@ idf.py build
 
 ---
 
-## 6. Flash the Firmware
+## 7. Flash the Firmware
 
 Connect your board using the **UART** port and run:
 
@@ -105,7 +114,7 @@ idf.py flash
 
 ---
 
-## 5. Connect as a Gamepad
+## 8. Connect as a Gamepad
 
 After flashing:
 
