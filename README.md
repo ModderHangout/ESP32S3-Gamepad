@@ -68,25 +68,23 @@ Install **ESP-IDF v5.5.4** from the official Espressif documentation.
 
 ---
 
-## 2. Open terminal
+## 2. Clone the repository
+
+Download the latest release and unzip it. Then move the **tusb_hid** file into your project
+
+---
+
+## 3. Open terminal
 
 In the windows search bar search **ESP IDF** and open
 
 ---
 
-## 3. Cd into the project workspace
+## 4. Cd into the project workspace
 
 ```bash
-cd DRIVE\Folder\Folder\Project
+cd DRIVE\Folder\Folder\Project\tusb_hid
 ```
----
-
-## 4. Clone the repository
-
-```bash
-git clone https://github.com/USERNAME/ESP32-S3-USB-Gamepad.git
-```
-
 ---
 
 ## 5. Build the Project
